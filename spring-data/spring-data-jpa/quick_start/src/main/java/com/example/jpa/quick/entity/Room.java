@@ -1,15 +1,10 @@
 package com.example.jpa.quick.entity;
 
 import com.example.jpa.quick.core.BaseEntity;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+@EqualsAndHashCode(callSuper = false)
 @Entity
 @Data
 @Builder
