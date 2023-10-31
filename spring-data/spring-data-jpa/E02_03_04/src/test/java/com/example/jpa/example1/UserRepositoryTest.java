@@ -3,7 +3,8 @@ package com.example.jpa.example1;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.assertj.core.util.Lists;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -22,10 +23,16 @@ public class UserRepositoryTest {
     @Autowired
     private UserOnlyNameEmailEntityRepository userOnlyNameEmailEntityRepository;
 
+    @BeforeEach
+    public void afterEach(){
+        userRepository.deleteAll();
+    }
+
     @Test
     public void testSaveUser() throws JsonProcessingException {
         User user = userRepository.save(User.builder().name("jackxx").email("123456@126.com").sex("man").address("shanghai").build());
-        Assert.assertNotNull(user);
+        Assertions.assertNotNull(user);
+
 //        List<User> users= userRepository.findAll();
 //        System.out.println(users);
 //        Assert.assertNotNull(users);

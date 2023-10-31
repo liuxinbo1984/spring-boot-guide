@@ -1,8 +1,5 @@
 plugins {
     id 'maven-publish'
-//    Unable to load class 'org.gradle.api.plugins.MavenPlugin'.
-//    id 'org.springframework.boot' version '2.3.3.RELEASE'
-
     id 'org.springframework.boot' version '2.7.15'
     id 'io.spring.dependency-management' version '1.0.10.RELEASE'
     id 'java'
@@ -25,7 +22,6 @@ compileJava {
 repositories {
     mavenLocal()
     maven { name "Alibaba" ; url "https://maven.aliyun.com/repository/public" }
-//    maven { name "Bstek" ; url "http://nexus.bsdn.org/content/groups/public/" }
     mavenCentral()
 }
 
@@ -55,7 +51,7 @@ dependencies {
     implementation 'com.jayway.jsonpath:json-path'
     compileOnly 'org.projectlombok:lombok'
 //    runtimeOnly('mysql:mysql-connector-java')
-    runtimeOnly('com.mysql:mysql-connector-j')
+//    runtimeOnly('com.mysql:mysql-connector-j')
     runtimeOnly 'com.h2database:h2'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     implementation 'com.querydsl:querydsl-apt'

@@ -1,0 +1,12 @@
+POST /user HTTP/1.1
+Host: 127.0.0.1:8091
+Content-Type: application/json
+Cache-Control: no-cache
+
+{"name": "jack","email":"123@163.com","sex": "BOY","age":20,"deleted": false}
+
+#################
+GET /users?size=3&page=0&sort=id,asc
+Host: 127.0.0.1:8091
+Content-Type: application/json
+Cache-Control: no-cache
